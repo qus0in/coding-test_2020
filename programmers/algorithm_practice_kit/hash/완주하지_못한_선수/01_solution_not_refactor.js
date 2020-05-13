@@ -3,7 +3,7 @@ function solution(participant, completion) {
     // 사용법(MDN) : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map
     // 동명이인은 합쳐서 카운트한 해시 테이블
     const completion_table = new Map();
-    // for of 를 통해 completion을 모두 순회
+    // for-of 를 통해 completion을 모두 순회
     for (const v of completion) {
         // 해당 이름의 key가 있으면 +1
         if (completion_table.has(v)) {
@@ -14,7 +14,7 @@ function solution(participant, completion) {
         }
     }
     // completion_table.forEach(console.log)
-    // for of 로 참가자를 모두 순회
+    // for-of 로 참가자를 모두 순회
     for (const v of participant) {
         // 만약에 키가 없다
         if (!completion_table.has(v)) {
