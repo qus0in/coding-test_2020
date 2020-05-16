@@ -10,6 +10,9 @@
 ### 🏃‍♂️ 완주하지 못한 선수 
 - 👀 [문제 분석](https://github.com/qus0in/coding_test_2020/wiki/1.1.1.-%EC%99%84%EC%A3%BC%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%9C-%EC%84%A0%EC%88%98)
 - 🔗 [프로그래머스로 가기](https://programmers.co.kr/learn/courses/30/lessons/42576)
-### 📞 전화번호 목록 
+### 📞 전화번호 목록
 - 👀 [문제 분석](https://github.com/qus0in/coding_test_2020/wiki/1.1.2.-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8-%EB%AA%A9%EB%A1%9D)
 - 🔗 [프로그래머스로 가기](https://programmers.co.kr/learn/courses/30/lessons/42577)
+### 🕵️ 위장
+- 👀 [문제 분석](https://github.com/qus0in/coding_test_2020/wiki/1.1.3.-위장)
+- 🔗 [프로그래머스로 가기](https://programmers.co.kr/learn/courses/30/lessons/42578)
