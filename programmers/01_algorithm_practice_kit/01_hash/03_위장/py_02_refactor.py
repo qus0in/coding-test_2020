@@ -10,7 +10,7 @@ def solution(clothes):
     # print(counter)
     # values 메소드를 사용해서 카테고리별 count된 결과만 받음
     # print(counter.values())
-    # reduce 메소드를 사용해서 람다식으로 1부터 카운트 된 값 + 1을 곱해주는 식 구현
+    # reduce 함수를 사용해서 람다식으로 1부터 카운트 된 값 + 1을 곱해주는 식 구현
     # print(reduce(lambda x, y: x * (y + 1), counter.values(), 1))
     # 마지막으로 -1까지 해서 답을 리턴
     # return reduce(lambda x, y: x * (y + 1), counter.values(), 1) - 1
