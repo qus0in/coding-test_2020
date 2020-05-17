@@ -16,3 +16,6 @@
 ### 🕵️ 위장
 - 👀 [문제 분석](https://github.com/qus0in/coding_test_2020/wiki/1.1.3.-위장)
 - 🔗 [프로그래머스로 가기](https://programmers.co.kr/learn/courses/30/lessons/42578)
+### 💿 베스트앨범
+- 👀 [문제 분석](https://github.com/qus0in/coding_test_2020/wiki/1.1.4.-베스트앨범)
+- 🔗 [프로그래머스로 가기](https://programmers.co.kr/learn/courses/30/lessons/42579)
