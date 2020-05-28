@@ -1,7 +1,7 @@
 package question;
 import java.util.Arrays;
 
-public class Q05 {
+public class Question05 {
   public static void input(int[][] caseArray, int[] answerArray) {
     System.out.println("두 자연수 a와 b의 최대공약수를 구하는 알고리즘");
     System.out.println("솔루션 1 : while문으로 모듈러스 연산");
@@ -20,49 +20,62 @@ public class Q05 {
   // 문제 : 최대공약수 구하기
   // 입력 : (타입) 정수, a, b
   // 출력 : a와 b의 최대공약수
+
   // 솔루션 1 : while문으로 모듈러스 연산
-  // 복잡도 : O(n)
   public static int solution(int a, int b) {
     /* 최대공약수 : 두 개 이상의 정수의 공통 약수 중 가장 큰 값
     // (1) 두 수의 약수 중에서
     // (2) 공통된 것을 찾아
     // (3) 그 값 중 최댓값인 것을 찾아야 함
     */
-    // [풀이]
+    // (예) 3034 & 4923
     // 두 수 중 더 작은 값을 i에 저장
+    // int i;
+    // if (a < b) {
+    //   i = a;
+    // } else {
+    //   i = b;
+    // }
+    // a가 b보다 작으면 a를, 아니면 b를 대입해준다
     int i = a < b ? a : b;
     while (true) {
-      // i가 두 수의 공통된 약수인지 확인 (둘 다 모듈러스(나머지 연산) 해서 0이 나오는 지)
-      if (a % i == 0 && b % i == 0) {
-      // 참이면 리턴하여 종료 (감소시키다보면 i가 1이 되기 때문에 모듈러스는 언젠가 0이 나올 수밖에 없음)
+      // i가 a와 b 두 수의 공통된 약수인지 확인
+      if(a % i == 0 && b % i == 0) {
+        // 공통된 약수 (나머지 0이니까)
+        // i를 리턴하면서 종료
         return i;
       }
-      // 거짓이면 i를 1만큼 감소시킴
-      i -= 1;
+      i--; // 증감연산자 통해서 -의 값을 1 줄여줌
     }
   }
+
   // 솔루션 2 : 유클리드 방식 (재귀)
-  // 복잡도 : O((log n)²)
   public static int solution2(int a, int b) {
     // (1) a와 b의 최대 공약수는 b와 a % b 의 최대공약수와 같음
     // (2) 어떤 수와 0의 최대공약수는 자기 자신
-    // [풀이]
-    if (b == 0) { //  종료 조건 (숫자 중 0이 발생))
-      return a;
-     } // 남은 숫자를 반환
-    return solution2(b, a % b); // 좀 더 작은 값으로 자기 자신을 호출
+    // a와 b. 
+    // 종료조건 : b가 0이면 종료
+    // b, 0 => b, a % b => a = x * b
+    if(b == 0) {
+      return a; // a가 원래 처음 들어왔던 두 수의 최대공약수임을 의미합니다
+    }
+    // a와 b의 최대공약수 연산을
+    // b와 a 나누기 b의 나머지 간의 연산으로 바꿔줌
+    return solution2(b, a % b);
   }
   // 솔루션 3 : 유클리드 방식 (반복)
-  // 복잡도 : O((log n)²)
   public static int solution3(int a, int b) {
-    int tmp; // 임시 저장을 위해 쓸 변수
-    while (b != 0) { // b가 0이 아니라면
-      tmp = a % b; // a를 b로 나눈 나머지를 임시 저장
-      a = b; // a에 b를 넣음
-      b = tmp; // b에 넣어줌
-      // (solution2 재귀와 똑같은 기능이지만 공간 복잡도가 줄어듦)
-    }
+    // 반복문의 기본은 외부 변수 선언
+    int tmp;
+    // 재귀에서의 종료 조건이 곧 반복문에서 제어 조건 (조건문)과 같음
+    while (b != 0) {
+      // solution2(b, a % b)
+      tmp = a % b;
+      a = b;
+      b = tmp; // a % b
+      // 재귀변수와 똑같은 구조
+      // 공간복잡도 - 사용하는 메모리나 호출하는 함수의 횟수가 줄어들어요
+    } // a <- b가 들어갔다, 근데 만약에 이 while 문이 종료되었다면 b = 0. 
     return a;
   }
 }
-// 추가 문제 : 피보나치 수열을 구하는 재귀 호출 알고리즘
