@@ -12,7 +12,7 @@ public class Solution {
         //  2.2. 주식 가격이 유지되지 않았다면 sec을 answer[i]에 넣어주고 break
         // 3. 다 돌면 answer를 리턴
         // [코드]
-        // p와 같은 크기의 배열 선언 및 초기화 
+        // prices와 같은 크기의 배열 선언 및 초기화 
         int[] answer = new int[prices.length];
         Deque<Integer> qu = new ArrayDeque<>(); // 순서대로 값을 처리해줄 queue 생성 (qu)
         for (int e : prices) {
