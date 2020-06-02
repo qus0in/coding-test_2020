@@ -1,0 +1,24 @@
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println(fact(5));
+    System.out.println(factDP(5));
+  }
+  // 재귀 호출의 경우
+  public static int fact(int n) {
+    // 종료 조건
+
+    // 큰 문제를 작은 문제로 => 점화식
+    
+    return 0;
+  }
+  // 동적계획법의 경우
+  public static int factDP(int n) {
+    // 메모이제이션 해줄 자료 구조
+    
+    // 큰 문제를 작은 문제로 => 점화식
+    
+    return 0;
+  }
+}
