@@ -20,9 +20,9 @@ class Solution {
         }
         // System.out.println(dp);
         for (int i = 1; i < 8; i++) { // 인덱스상 1번째~7번째 (2~8개의 N을 쓴 수)를 구하기 위해
-            for (int j = 0; j <= (i / 2); j++) { // 두 쌍을 구해서 사칙연산을 해줌
-                for (int a : dp.get(i - j - 1)) { // i - j - 1 번째 => a
-                    for (int b : dp.get(j)) { // j 번째 => b (둘은 0에서 j 안의 범위에서 서로 사칙연산 해줌) => 결과적으로 보면 i가 1일 때 (0, 0), i가 2일 때 (1,0), (0,1) 이런 식으로 짝을 찾아줌. 중복 일어나는 점에서 착안해서 j가 들어간 for문에서 j의 범위를 절반만 주는 것
+            for (int j = 0; j < i; j++) { // 두 쌍을 구해서 사칙연산을 해줌
+                for (int a : dp.get(j)) { // j 번째 => a
+                    for (int b : dp.get(i - j - 1)) { // i - j - 1 번째 => b (둘은 0에서 j 안의 범위에서 서로 사칙연산 해줌) => 결과적으로 보면 i가 1일 때 (0, 0), i가 2일 때 (1,0), (0,1) 이런 식으로 짝을 찾아줌. 중복 일어나는 점에서 착안해서 j가 들어간 for문에서 j의 범위를 절반만 주는 것
                         dp.get(i).add(a + b);
                         dp.get(i).add(a - b);
                         dp.get(i).add(a * b);
@@ -30,11 +30,11 @@ class Solution {
                             dp.get(i).add(a / b);                         
                         }
                     }
-                    if(dp.get(i).contains(number)) {
-                        // System.out.println(dp.get(i));
-                        return i + 1; // 만약에 쌍으로 구해준 것 중에 답이 있으면 현재 사용한 N의 갯수 (i+1)를 리턴
-                    }
                 }
+            }
+            if(dp.get(i).contains(number)) {
+                // System.out.println(dp.get(i));
+                return i + 1; // 만약에 쌍으로 구해준 것 중에 답이 있으면 현재 사용한 N의 갯수 (i+1)를 리턴
             }
         }
         return -1; // 끝까지 찾아도 없으면 -1 리턴
