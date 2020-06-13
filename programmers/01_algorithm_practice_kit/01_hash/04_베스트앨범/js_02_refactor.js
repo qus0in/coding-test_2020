@@ -19,8 +19,8 @@ function solution(genres, plays) {
 		songMap.set(key, bestSong);
 	}
 	// array 관련 메소드 합쳐줌
-	return Array.from(sumMap.entries()) // sumMap에서 entry를 들고 와서
-		.sort((a, b) => b[1] - a[1]) // 재생수 기준으로 정렬해준 다음에
+	return Array.from(sumMap.entries()) // sumMap에서 entry를 들고 와서 배열로 바꿔준 다음
+		.sort((a, b) => b[1] - a[1]) // 재생수 기준으로 내림차순 정렬해준 다음에
 		.map((x) =>
 			songMap
 				.get(x[0]) // 해당 키 값으로 songMap을 들고 와서

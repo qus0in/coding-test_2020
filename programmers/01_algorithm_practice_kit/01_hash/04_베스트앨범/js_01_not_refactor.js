@@ -22,7 +22,7 @@ function solution(genres, plays) {
     // console.log(...songMap);
     // console.log(...sumMap.entries());
     // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-    // 재생횟수 기준으로 오름차순 정렬 (sumMap)
+    // 재생횟수 기준으로 내림차순 정렬 (sumMap)
     const sorted = Array.from(sumMap.entries()).sort((a, b) => b[1] - a[1]);
     // console.log(sorted);
     // sumMap의 키 정보로 songMap 호출한 뒤, 인덱스 정보만 남김. 만약에 -1이라는 인덱스가 있다면 그것은 빈 값이므로 지워줌
